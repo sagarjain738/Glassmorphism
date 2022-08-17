@@ -1,0 +1,120 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ff3f8b, #dff1ff);
+}
+
+.container .color {
+    position: absolute;
+    filter: blur(150px);
+}
+
+.container .color:nth-child(1) {
+    top: -350px;
+    background: #ff359b;
+    width: 600px;
+    height: 600px;
+}
+
+.container .color:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    background: #fffd87;
+    width: 500px;
+    height: 500px;
+}
+
+.container .color:nth-child(3) {
+    bottom: -50px;
+    right: 0;
+    background: #00d2ff;
+    width: 300px;
+    height: 300px;
+}
+
+.container::before {
+    position: absolute;
+    content: "";
+    width: 100vw;
+    height: 50vh;
+    bottom: 0;
+    border-top: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+ul {
+    position: relative;
+    display: flex;
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    margin: 10px;
+}
+
+ul li a {
+    position: relative;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: top 500ms, z-index 500ms, transform 500ms;
+    transition-delay: 500ms, 500ms, 0ms;
+}
+
+ul li a:hover {
+    transition-delay: 0ms, 0ms, 500ms;
+    top: -50px;
+    transform: translateY(50px);
+    z-index: 11;
+}
+
+ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: skewX(45deg) translateX(150px);
+    transition: 500ms;
+}
+
+ul li a:hover::before {
+    transform: skewX(45deg) translateX(-150px);
+}

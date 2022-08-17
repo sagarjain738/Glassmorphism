@@ -1,0 +1,82 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: purple;
+}
+
+.container ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    position: relative;
+    overflow: hidden;
+}
+
+.container ul::before {
+    overflow: hidden;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.container ul li {
+    list-style: none;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    z-index: 10;
+    color: #fff;
+    overflow: hidden;
+}
+
+.container ul li:nth-child(1) {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.container ul li:nth-child(5) {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.container ul .light {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    transition: all 500ms;
+}
+
+.container ul .light::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-color: #5da6ff;
+    box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff, 0 0 60px #5da6ff;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 500ms;
+}

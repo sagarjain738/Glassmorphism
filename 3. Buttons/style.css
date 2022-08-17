@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #350048
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container .btn {
+    position: relative;
+    margin: 4rem;
+    width: 12rem;
+    height: 4rem;
+}
+
+.container .btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    backdrop-filter: blur(25px);
+    text-decoration: none;
+}
+
+.btn a::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -10%;
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg);
+}
+
+.container .btn::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 15px;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    border-radius: 10px;
+    transition: 250ms;
+}
+
+.container .btn::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 15px;
+    bottom: -5px;
+    left: 50%;
+    background-color: red;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    transition: 250ms;
+}
+
+.container .btn:hover::before {
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    top: 0;
+}
+
+.container .btn:hover::after {
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    bottom: 0;
+}
+
+.container .btn:nth-child(2)::before,
+.container .btn:nth-child(2)::after {
+    background-color: rgb(35, 128, 66);
+}
+
+.container .btn:nth-child(3)::before,
+.container .btn:nth-child(3)::after {
+    background-color: rgb(16, 199, 190);
+}

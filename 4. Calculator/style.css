@@ -1,0 +1,68 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(43, 30, 97);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body::before {
+    position: absolute;
+    content: "";
+    width: 14rem;
+    height: 14rem;
+    background: linear-gradient(rgb(240, 49, 24), rgb(202, 106, 28));
+    border-radius: 50%;
+    top: 7%;
+    left: 30%;
+}
+
+body::after {
+    position: absolute;
+    content: "";
+    width: 14rem;
+    height: 14rem;
+    background: linear-gradient(rgb(240, 49, 24), rgb(202, 106, 28));
+    border-radius: 50%;
+    bottom: 2%;
+    right: 30%;
+}
+
+.container {
+    width: 20rem;
+    height: 32rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+.container .calc {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.container .calc .value {
+    background-color: red;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    grid-column: 1 / 5;
+    grid-row: 1/3;
+}
+
+.numbers {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* align-self: center;
+    justify-self: center; */
+}
